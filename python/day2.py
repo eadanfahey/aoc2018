@@ -1,3 +1,4 @@
+import itertools
 from os.path import join, dirname, pardir
 from collections import Counter
 
@@ -10,9 +11,7 @@ def read_input():
 
 
 def pairs(alist):
-    for a in alist:
-        for b in alist:
-            yield a, b
+    return itertools.combinations(alist, 2)
 
 
 def edit_distance(id1, id2):
